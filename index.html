@@ -389,24 +389,23 @@
     <h2 id="about">About Me</h2>
     <p>
       I'm a first-year M.S.&ndash;Ph.D. student at Korea University.
-      Through building IMU-based indoor positioning systems&mdash;from sensor signal processing
-      to Android deployment&mdash;I experienced how thresholds, windows, and scale parameters
-      break silently when users or environments change, and how manual tuning does not scale.
+      I built IMU-based indoor positioning systems from sensor processing to Android apps.
+      While doing this, I found that parameters like thresholds, windows, and scales
+      often break when users or environments change, and tuning them by hand does not work well.
     </p>
     <p>
-      This motivates my current interest in hyperparameter and parameter optimization:
-      systematizing the tuning process with HPO and automated search,
-      and coupling it with bi-level optimization so that adaptation and generalization
-      reinforce each other. I enjoy building end-to-end pipelines
-      (data collection &rarr; modeling &rarr; evaluation &rarr; deployment)
-      and care about reproducibility through clean code and logging.
+      This led me to study hyperparameter optimization (HPO) and automated tuning.
+      I want to replace manual tuning with systematic search,
+      and use bi-level optimization to make models both adaptive and general.
+      I like building full pipelines (data &rarr; model &rarr; evaluation &rarr; deployment)
+      and keeping results easy to reproduce with clean code and logs.
     </p>
 
     <!-- Research Interests -->
     <h2>Research Interests</h2>
     <div class="interest-group">
       <div class="interest-group-title">Hyperparameter &amp; Parameter Optimization</div>
-      <p class="interest-group-desc">Automating threshold/window/scale tuning in time-series &amp; sensor systems where manual configuration is fragile across users and environments; bi-level optimization coupling adaptation with generalization</p>
+      <p class="interest-group-desc">Auto-tuning thresholds, windows, and scales in sensor/time-series systems where manual settings break across users and environments; bi-level optimization for both adaptation and generalization</p>
     </div>
     <div class="interest-group">
       <div class="interest-group-title">Robust Learning &amp; Adaptation</div>
@@ -451,8 +450,8 @@
       <div class="timeline-detail">
         <h4>NBES Laboratory &mdash; Undergraduate Research Intern</h4>
         <ul>
-          <li>Enhanced glucose sensitivity by adsorbing gold nanoparticles onto a carbon-based glucose sensor</li>
-          <li>Conducted CV (Cyclic Voltammetry) data analysis and visualization</li>
+          <li>Improved glucose sensor sensitivity by adding gold nanoparticles to a carbon-based sensor</li>
+          <li>Analyzed and visualized Cyclic Voltammetry (CV) data</li>
         </ul>
       </div>
     </div>
@@ -466,9 +465,9 @@
         <span class="project-meta">Jun 2024 &ndash; Oct 2025</span>
       </div>
       <p class="project-par" style="font-size:12px; color:var(--accent); margin-bottom:6px; font-weight:500;">Government-funded &middot; ADD Future Challenge Project (국방부 미래도전과제)</p>
-      <p class="project-par"><strong>Problem:</strong> GPS-denied steel-hull naval vessels require real-time crew tracking for operational awareness and counter-terrorism response.</p>
-      <p class="project-par"><strong>Approach:</strong> Contributed to geomagnetic data collection on multi-deck vessels, LSTM-based magnetic fingerprint map construction, and real-time magnetometer matching for crew positioning. The system was integrated with a digital twin service and AR glasses interface.</p>
-      <p class="project-par"><strong>Result:</strong> Team delivered a geomagnetic positioning system for the Hansando-class vessel with LSTM-based magnetic map, real-time digital twin tracking, and AR situational awareness.</p>
+      <p class="project-par"><strong>Problem:</strong> GPS does not work inside steel naval ships, but the crew's location must be tracked in real time.</p>
+      <p class="project-par"><strong>Approach:</strong> Helped collect magnetic field data inside the ship, build an LSTM-based magnetic map, and match live sensor readings to estimate positions. The system was connected to a digital twin and AR glasses.</p>
+      <p class="project-par"><strong>Result:</strong> Team built a working positioning system for the Hansando-class vessel with magnetic map, digital twin tracking, and AR display.</p>
       <div class="project-tags">
         <span class="tag">Geomagnetic Fingerprinting</span>
         <span class="tag">LSTM</span>
@@ -484,9 +483,9 @@
         <span class="project-meta">Sep &ndash; Nov 2025</span>
       </div>
       <p class="project-par" style="font-size:12px; color:var(--accent); margin-bottom:6px; font-weight:500;">Industry-funded &middot; 스마트건설 얼라이언스 &middot; 대우건설</p>
-      <p class="project-par"><strong>Problem:</strong> Newly constructed apartments lack indoor positioning infrastructure for in-building navigation.</p>
-      <p class="project-par"><strong>Approach:</strong> Contributed to PDR-based positioning deployment in Daewoo E&amp;C apartments, including on-site data collection, multi-floor algorithm calibration, and ZeroMap platform integration.</p>
-      <p class="project-par"><strong>Result:</strong> Team delivered a validated indoor positioning system within the 3-month timeline, contributing residential map data to the navigation platform.</p>
+      <p class="project-par"><strong>Problem:</strong> New apartment buildings have no indoor positioning, so navigation inside is not possible.</p>
+      <p class="project-par"><strong>Approach:</strong> Helped set up PDR-based positioning in Daewoo apartments: collected data on-site, tuned algorithms for each floor, and connected it to the ZeroMap platform.</p>
+      <p class="project-par"><strong>Result:</strong> Team finished a working indoor positioning system in 3 months and added apartment map data to the navigation platform.</p>
       <div class="project-tags">
         <span class="tag">Indoor Positioning</span>
         <span class="tag">PDR</span>
@@ -503,8 +502,8 @@
         <h3>Indoor Pedestrian Dead Reckoning (PDR) System</h3>
         <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Existing PDR methods suffer from drift and fail to adapt to diverse phone-holding modes in GPS-denied indoor environments.</p>
-      <p class="project-par"><strong>Approach:</strong> Built adaptive 3-mode step detection (OnHand/InPocket/HandSwing) with peak-valley-zero-crossing state machine, quaternion transforms, and C++17/JNI engine. Compared 5 stride formulas and 7 step detection methods on 700+ datasets.</p>
+      <p class="project-par"><strong>Problem:</strong> Indoor positioning without GPS drifts over time, and results change depending on how the user holds the phone.</p>
+      <p class="project-par"><strong>Approach:</strong> Built step detection for 3 phone modes (hand/pocket/swing) using a state machine and quaternion transforms in C++17/JNI. Tested 5 stride formulas and 7 detection methods on 700+ datasets.</p>
       <p class="project-par"><strong>Result:</strong> 2 Android apps, 42 Python analysis tools, and a C++ engine (7,400+ LOC).</p>
       <div class="project-tags">
         <span class="tag">Kotlin</span>
@@ -524,9 +523,9 @@
         <h3>Deep RL-based PDR Step Length Personalization</h3>
         <span class="project-meta">2025 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Fixed stride models cause systematic drift because gait characteristics vary across individuals.</p>
-      <p class="project-par"><strong>Approach:</strong> Designed a custom Gymnasium environment (38-dim state, 41 actions) to learn per-user scaling factors via DQN/PPO with Zeromap collision detection.</p>
-      <p class="project-par"><strong>Result:</strong> Implemented environment and training pipeline; project paused at preliminary experimentation stage.</p>
+      <p class="project-par"><strong>Problem:</strong> A fixed stride model drifts because every person walks differently.</p>
+      <p class="project-par"><strong>Approach:</strong> Made a Gymnasium environment (38-dim state, 41 actions) to learn a per-user stride scale with DQN/PPO and indoor map collision checking.</p>
+      <p class="project-par"><strong>Result:</strong> Built the environment and training pipeline; project paused at early experiment stage.</p>
       <div class="project-tags">
         <span class="tag">DQN</span>
         <span class="tag">PPO</span>
@@ -541,9 +540,9 @@
         <h3>Multi-Building Indoor Navigation Platform</h3>
         <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> No unified system for multi-building, multi-floor indoor routing with real-time floor detection.</p>
-      <p class="project-par"><strong>Approach:</strong> Built ZeroMap apps (compass + PDR), barometer-based floor detection (Weighted Scoring FSM), and C++ simulation framework (38K LOC) with OpenCV visualization.</p>
-      <p class="project-par"><strong>Result:</strong> Tested and demonstrated across 4 buildings (KU campus, Daewoo apartment, Suwon station, naval vessel) with 3 simulators and Express.js / Spring Boot backends.</p>
+      <p class="project-par"><strong>Problem:</strong> No single system could handle navigation across multiple buildings and floors with real-time floor detection.</p>
+      <p class="project-par"><strong>Approach:</strong> Built ZeroMap apps (compass + PDR), floor detection using air pressure sensors, and a C++ simulator (38K LOC) with OpenCV for visual comparison.</p>
+      <p class="project-par"><strong>Result:</strong> Tested in 4 buildings (KU campus, Daewoo apartment, Suwon station, naval vessel) with 3 simulators and Express.js / Spring Boot servers.</p>
       <div class="project-tags">
         <span class="tag">Android</span>
         <span class="tag">C++17</span>
@@ -563,9 +562,9 @@
         <h3>Real-time Indoor Object Detection &amp; OCR</h3>
         <span class="project-meta">2025 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Indoor navigation lacks visual context&mdash;users cannot automatically identify stairs, exits, or elevators from camera feed.</p>
-      <p class="project-par"><strong>Approach:</strong> Trained YOLOv8n (3.2M params, 8 classes) and deployed on Android via ONNX Runtime + Camera2. Integrated OCR for sign text extraction.</p>
-      <p class="project-par"><strong>Result:</strong> 90%+ precision (stair mAP50: 84.5%, exit sign: 99.5%) with real-time mobile inference at 640&times;640.</p>
+      <p class="project-par"><strong>Problem:</strong> Indoor navigation apps cannot tell what the camera sees&mdash;stairs, exits, or elevators are not recognized.</p>
+      <p class="project-par"><strong>Approach:</strong> Trained YOLOv8n (8 classes) and ran it on Android with ONNX Runtime + Camera2. Added OCR to read sign text.</p>
+      <p class="project-par"><strong>Result:</strong> Stair detection mAP50 84.5%, exit sign 99.5%, running in real time on mobile.</p>
       <div class="project-tags">
         <span class="tag">YOLOv8</span>
         <span class="tag">ONNX Runtime</span>
@@ -582,9 +581,9 @@
         <h3>Automated Floor Plan Processing &amp; Indoor Map Generation</h3>
         <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Converting CAD drawings (DXF) into indoor map data is manual and doesn't scale across buildings.</p>
-      <p class="project-par"><strong>Approach:</strong> Python pipeline parsing DXF files with geometric stair detection and YOLOv8-based POI extraction from rasterized floor plans.</p>
-      <p class="project-par"><strong>Result:</strong> Automated map extraction for 4 buildings (Hansando, Daewoo, Suwon Station, Anam Hospital), eliminating manual annotation.</p>
+      <p class="project-par"><strong>Problem:</strong> Turning CAD floor plans (DXF) into indoor map data by hand is slow and does not scale.</p>
+      <p class="project-par"><strong>Approach:</strong> Built a Python tool that reads DXF files, finds stairs by shape, and uses YOLOv8 to detect elevators and exits from floor plan images.</p>
+      <p class="project-par"><strong>Result:</strong> Automatically extracted maps for 4 buildings (Hansando, Daewoo, Suwon Station, Anam Hospital) without manual work.</p>
       <div class="project-tags">
         <span class="tag">Python</span>
         <span class="tag">ezdxf</span>
@@ -604,9 +603,9 @@
         <h3>Virtual Reality Using Various Sensors in Unity</h3>
         <span class="project-meta">Jul &ndash; Nov 2024</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Standard VR controllers lack intuitive physical interaction; muscle effort and body balance are not captured.</p>
-      <p class="project-par"><strong>Approach:</strong> Integrated EMG sensors for shooting triggers and IMU-equipped balance boards for object movement in a Unity VR environment.</p>
-      <p class="project-par"><strong>Result:</strong> Demonstrated a working VR prototype where physical exertion and balance directly control the game.</p>
+      <p class="project-par"><strong>Problem:</strong> Normal VR controllers do not capture muscle effort or body balance.</p>
+      <p class="project-par"><strong>Approach:</strong> Used EMG sensors to trigger shooting and IMU balance boards to move objects in Unity VR.</p>
+      <p class="project-par"><strong>Result:</strong> Made a working VR game controlled by real physical movement and balance.</p>
       <div class="project-tags">
         <span class="tag">Unity</span>
         <span class="tag">EMG</span>
@@ -620,8 +619,8 @@
         <h3>Creating Realistic AR Content Using Trackers</h3>
         <span class="project-meta">Jul &ndash; Nov 2024</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Producing believable AR content requires precise real-world tracking, which commercial solutions don't always provide affordably.</p>
-      <p class="project-par"><strong>Approach:</strong> Manufactured 10 custom hardware trackers and developed an AR blending pipeline with Korea University's "Hoi" character.</p>
+      <p class="project-par"><strong>Problem:</strong> Making realistic AR content needs accurate tracking, but off-the-shelf solutions are expensive.</p>
+      <p class="project-par"><strong>Approach:</strong> Built 10 custom hardware trackers and made an AR blending pipeline with Korea University's "Hoi" character.</p>
       <p class="project-par"><strong>Result:</strong> Published AR video content on <a href="https://instagram.com/hoiverse.io" target="_blank">Instagram: hoiverse.io</a>.</p>
       <div class="project-tags">
         <span class="tag">AR</span>
@@ -635,9 +634,9 @@
         <h3>PID Motor Control</h3>
         <span class="project-meta">May &ndash; Jun 2024</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Controlling a DD motor to follow sinusoidal references requires precise tuning and accurate system modeling.</p>
-      <p class="project-par"><strong>Approach:</strong> Derived a transfer function from experimental frequency responses, then designed and implemented PD and PID controllers.</p>
-      <p class="project-par"><strong>Result:</strong> Validated controller performance with sinusoidal tracking and step response experiments in Matlab.</p>
+      <p class="project-par"><strong>Problem:</strong> A DD motor needs to follow a sine wave input, which requires accurate tuning and system modeling.</p>
+      <p class="project-par"><strong>Approach:</strong> Found the transfer function from experiments, then built PD and PID controllers.</p>
+      <p class="project-par"><strong>Result:</strong> Tested the controllers with sine wave tracking and step response in Matlab.</p>
       <div class="project-tags">
         <span class="tag">Matlab</span>
         <span class="tag">PID Control</span>
@@ -650,9 +649,9 @@
         <h3>Gait Analysis with Matlab</h3>
         <span class="project-meta">Mar &ndash; Jun 2024</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Understanding human gait biomechanics requires accurate motion capture and quantitative analysis.</p>
-      <p class="project-par"><strong>Approach:</strong> Collected gait data using infrared trackers and processed joint angles and gait cycles in Matlab.</p>
-      <p class="project-par"><strong>Result:</strong> Produced a biomedical engineering analysis report with gait pattern classification.</p>
+      <p class="project-par"><strong>Problem:</strong> Studying how people walk requires accurate motion capture and data analysis.</p>
+      <p class="project-par"><strong>Approach:</strong> Recorded walking data with IR trackers and analyzed joint angles and gait cycles in Matlab.</p>
+      <p class="project-par"><strong>Result:</strong> Wrote a biomedical engineering report with gait pattern analysis.</p>
       <div class="project-tags">
         <span class="tag">Matlab</span>
         <span class="tag">Biomedical</span>
