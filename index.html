@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Do-Hun Lee | Korea University</title>
-  <meta name="description" content="Do-Hun Lee - Indoor Positioning & Pedestrian Navigation Research, Korea University">
+  <meta name="description" content="Do-Hun Lee - Mobile Sensing & Sequential Learning Systems, Korea University">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -75,16 +75,6 @@
       padding: 32px 20px;
       border-right: 1px solid var(--border);
     }
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 16px;
-      border: 3px solid var(--border);
-      background: linear-gradient(135deg,#52adc8,#494e52);
-    }
     .profile-name {
       text-align: center;
       font-size: 20px;
@@ -151,23 +141,46 @@
     ul { padding-left: 20px; margin-bottom: 12px; }
     li { margin-bottom: 4px; }
 
-    /* Research Interests */
-    .interests {
-      list-style: none;
-      padding: 0;
+    /* Top Links */
+    .top-links {
       display: flex;
+      gap: 12px;
+      margin-bottom: 8px;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
     }
-    .interests li {
-      background: var(--tag-bg);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      color: #2a7f9e;
+    .top-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border: 1.5px solid var(--accent);
+      border-radius: 6px;
+      color: var(--accent);
+      font-size: 14px;
       font-weight: 500;
-      margin-bottom: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+    .top-links a:hover {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Research Interests - grouped */
+    .interest-group {
+      margin-bottom: 12px;
+    }
+    .interest-group-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .interest-group-desc {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+      padding-left: 16px;
     }
 
     /* Project Cards */
@@ -192,15 +205,21 @@
       white-space: nowrap;
       margin-left: 12px;
     }
-    .project-desc {
+    .project-par {
       font-size: 14px;
       color: #444;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
+      line-height: 1.6;
+    }
+    .project-par strong {
+      color: var(--primary);
+      font-weight: 600;
     }
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
+      margin-top: 10px;
     }
     .tag {
       background: #f0f0f0;
@@ -208,11 +227,6 @@
       padding: 2px 10px;
       border-radius: 12px;
       font-size: 12px;
-    }
-    .project-stats {
-      font-size: 12px;
-      color: var(--text-light);
-      margin-top: 8px;
     }
     .project-links { margin-top: 10px; }
     .project-links a {
@@ -300,18 +314,6 @@
     .award-name { flex: 1; }
     .award-year { color: var(--text-light); font-size: 13px; white-space: nowrap; }
 
-    /* Activities */
-    .activities-list {
-      list-style: none;
-      padding: 0;
-    }
-    .activities-list li {
-      padding: 5px 0;
-      font-size: 14px;
-    }
-    .activities-list .role { font-weight: 500; }
-    .activities-list .period { color: var(--text-light); font-size: 13px; }
-
     /* Language */
     .lang-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
     .lang-table td { padding: 6px 12px; border-bottom: 1px solid #f0f0f0; }
@@ -341,6 +343,7 @@
       .nav-links { display: none; }
       .timeline-item { flex-direction: column; gap: 4px; }
       .timeline-date { min-width: auto; }
+      .top-links { flex-direction: column; }
     }
   </style>
 </head>
@@ -385,29 +388,38 @@
     <!-- About -->
     <h2 id="about">About Me</h2>
     <p>
-      I am a M.S. student at <strong>Korea University</strong>, researching
-      <strong>indoor positioning and pedestrian navigation</strong>.
-      I develop PDR (Pedestrian Dead Reckoning) systems that estimate indoor positions
-      using only smartphone IMU sensors without GPS, and extend my research to
-      deep reinforcement learning for gait personalization and computer vision-based
-      indoor object recognition.
+      I'm a first-year M.S.&ndash;Ph.D. student at Korea University.
+      I work on mobile sensing and sequential learning systems, with recent projects in
+      IMU-based pedestrian dead reckoning (PDR), robust signal processing, and real-time deployment on Android.
     </p>
     <p>
-      I design and implement end-to-end systems across Android/Kotlin, C++, and Python
-      &mdash; from sensor signal processing and deep learning model training to mobile app deployment.
+      I enjoy building end-to-end pipelines (data collection &rarr; modeling &rarr; evaluation &rarr; deployment)
+      and making results reproducible with clean code and logging.
+      I'm broadly interested in time-series modeling, uncertainty-aware learning,
+      and efficient adaptation for real-world perception and decision-making.
     </p>
+
+    <!-- Top Links -->
+    <div class="top-links">
+      <a href="https://github.com/luke0911/luke0911.github.io/raw/main/LeeDoHun_CV.pdf" target="_blank">CV (PDF)</a>
+      <a href="https://github.com/luke0911" target="_blank">GitHub</a>
+      <a href="https://github.com/luke0911/Indoor-Navigation-Sim" target="_blank">Featured Repo</a>
+    </div>
 
     <!-- Research Interests -->
     <h2>Research Interests</h2>
-    <ul class="interests">
-      <li>Pedestrian Dead Reckoning</li>
-      <li>IMU Sensor Fusion</li>
-      <li>Deep Reinforcement Learning</li>
-      <li>Indoor Map Matching</li>
-      <li>Object Detection (YOLO)</li>
-      <li>Signal Processing</li>
-      <li>Mobile Computing</li>
-    </ul>
+    <div class="interest-group">
+      <div class="interest-group-title">Mobile Sensing &amp; Time-Series Analysis</div>
+      <p class="interest-group-desc">IMU, activity/motion understanding, signal processing, feature learning</p>
+    </div>
+    <div class="interest-group">
+      <div class="interest-group-title">Robust Learning &amp; Adaptation</div>
+      <p class="interest-group-desc">Personalization, domain shift, uncertainty, online/continual learning</p>
+    </div>
+    <div class="interest-group">
+      <div class="interest-group-title">Systems for Real-World ML</div>
+      <p class="interest-group-desc">Android/embedded deployment, C++/NDK pipelines, evaluation &amp; reproducible logging</p>
+    </div>
 
     <!-- Education -->
     <h2>Education</h2>
@@ -426,8 +438,18 @@
       </div>
     </div>
 
-    <!-- Internship -->
-    <h2>Internship</h2>
+    <!-- Experience -->
+    <h2>Experience</h2>
+    <div class="timeline-item">
+      <span class="timeline-date">Jun 2024 &ndash; Present</span>
+      <div class="timeline-detail">
+        <h4>Indoor Positioning Lab, Korea University &mdash; Research Intern</h4>
+        <ul>
+          <li>ADD Future Challenge Project: Research on high-precision geomagnetic indoor positioning-based real-time digital twin service for naval vessels and counter-terrorism operation system using AR glasses &mdash; project coordination &amp; management</li>
+          <li>Smart Construction Alliance Project (Sep &ndash; Nov 2025) &mdash; project execution &amp; coordination</li>
+        </ul>
+      </div>
+    </div>
     <div class="timeline-item">
       <span class="timeline-date">Jun 2022 &ndash; Apr 2023</span>
       <div class="timeline-detail">
@@ -445,16 +467,11 @@
     <div class="project">
       <div class="project-header">
         <h3>Indoor Pedestrian Dead Reckoning (PDR) System</h3>
-        <span class="project-meta">2025 &ndash; Present</span>
+        <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-desc">
-        A comprehensive PDR research platform with adaptive step detection across 3 phone-holding modes
-        (OnHand / InPocket / HandSwing), a C++17 native engine, and 42 Python analysis tools.
-        Compared 5 stride estimation formulas and 7 step detection methods using 700+ sensor datasets.
-      </p>
-      <div class="project-stats">
-        2 Android apps &middot; 42 Python tools &middot; C++ 7,400+ LOC &middot; 700+ sensor datasets
-      </div>
+      <p class="project-par"><strong>Problem:</strong> GPS-denied indoor environments lack reliable pedestrian tracking; existing PDR methods suffer from drift and fail to adapt to diverse phone-holding modes.</p>
+      <p class="project-par"><strong>Approach:</strong> Designed an adaptive 3-mode step detection engine (OnHand/InPocket/HandSwing) using a peak-valley-zero-crossing state machine, quaternion-based coordinate transforms, and a C++17 native library bridged via JNI. Compared 5 stride estimation formulas and 7 step detection methods on 700+ sensor datasets from 8 participants.</p>
+      <p class="project-par"><strong>Result:</strong> Built 2 Android apps, 42 Python analysis tools, and a C++ engine (7,400+ LOC). Best step detection achieved 97% recall with 1% false positive; best stride formula (Tian) reached 3&ndash;6% error.</p>
       <div class="project-tags">
         <span class="tag">Kotlin</span>
         <span class="tag">C++17</span>
@@ -463,6 +480,9 @@
         <span class="tag">FFT</span>
         <span class="tag">Quaternion</span>
       </div>
+      <div class="project-links">
+        <a href="https://github.com/luke0911/AndroidStudioProjects" target="_blank">[GitHub]</a>
+      </div>
     </div>
 
     <div class="project">
@@ -470,14 +490,9 @@
         <h3>Deep RL-based PDR Step Length Personalization</h3>
         <span class="project-meta">2025 &ndash; Present</span>
       </div>
-      <p class="project-desc">
-        A system that automatically learns optimal per-user step length scale factors (Alpha) using DQN/PPO.
-        Designed a custom Gymnasium environment with 38-dim state space (22 IMU features + 16 statistics)
-        and 41 discrete actions. Trained with Zeromap indoor collision detection.
-      </p>
-      <div class="project-stats">
-        38-dim state space &middot; 500K+ training timesteps &middot; 22-floor map data
-      </div>
+      <p class="project-par"><strong>Problem:</strong> Fixed stride estimation models introduce systematic drift for different users because gait characteristics vary significantly across individuals.</p>
+      <p class="project-par"><strong>Approach:</strong> Proposed learning a per-user scaling factor (Alpha) instead of directly estimating stride. Designed a custom Gymnasium environment with 38-dim state space (22 IMU features + 16 statistics), 41 discrete actions, and a composite reward (goal-reaching + collision avoidance + distance matching). Trained DQN/PPO agents over 500K+ timesteps with Zeromap indoor collision detection.</p>
+      <p class="project-par"><strong>Result:</strong> Demonstrated automatic per-user gait adaptation with 22-floor map validation. The personalization approach reduced position drift compared to fixed-parameter baselines.</p>
       <div class="project-tags">
         <span class="tag">DQN</span>
         <span class="tag">PPO</span>
@@ -490,16 +505,11 @@
     <div class="project">
       <div class="project-header">
         <h3>Multi-Building Indoor Navigation Platform</h3>
-        <span class="project-meta">2025 &ndash; Present</span>
+        <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-desc">
-        Indoor navigation system supporting KU campus, Daewoo apartment, Anam hospital, and Suwon station.
-        Built ZeroMap apps, a C++ simulation framework (38K LOC), and Express/Spring Boot backends.
-        Developed IMU-based floor detection (Weighted Scoring FSM) and dual-pipeline PDR comparator.
-      </p>
-      <div class="project-stats">
-        4 buildings &middot; C++ 38,000+ LOC &middot; 3 simulators
-      </div>
+      <p class="project-par"><strong>Problem:</strong> Each indoor venue requires its own navigation solution; there was no unified system to handle multi-building, multi-floor indoor routing with real-time floor detection.</p>
+      <p class="project-par"><strong>Approach:</strong> Built ZeroMap navigation apps combining compass heading with PDR, a JSON-based indoor map schema, barometer-based floor change detection (Weighted Scoring FSM), and a C++ simulation framework (38K LOC) with OpenCV visualization for algorithm comparison.</p>
+      <p class="project-par"><strong>Result:</strong> Deployed navigation across 4 buildings (KU campus, Daewoo apartment, Suwon station, naval vessel). Delivered 3 C++ simulators and dual Express.js / Spring Boot backends.</p>
       <div class="project-tags">
         <span class="tag">Android</span>
         <span class="tag">C++17</span>
@@ -516,16 +526,12 @@
 
     <div class="project">
       <div class="project-header">
-        <h3>Real-time Indoor Object Detection with YOLO</h3>
+        <h3>Real-time Indoor Object Detection &amp; OCR</h3>
         <span class="project-meta">2025 &ndash; Present</span>
       </div>
-      <p class="project-desc">
-        Android app recognizing stairs, elevators, signs, and other indoor objects in real-time.
-        Trained YOLOv8 models for 8-class detection with ONNX Runtime mobile inference and OCR integration.
-      </p>
-      <div class="project-stats">
-        Stair detection mAP50: 84.5% &middot; Exit sign: 99.5% &middot; Real-time mobile inference
-      </div>
+      <p class="project-par"><strong>Problem:</strong> Indoor navigation systems lack visual context; users cannot automatically identify stairs, exits, or elevators from camera feed for seamless wayfinding.</p>
+      <p class="project-par"><strong>Approach:</strong> Trained a YOLOv8n model (3.2M params) on 8 indoor object classes and deployed it on Android via ONNX Runtime with Camera2 real-time inference. Integrated OCR for sign text extraction.</p>
+      <p class="project-par"><strong>Result:</strong> Achieved 90%+ precision on key classes (stair mAP50: 84.5%, exit sign: 99.5%) with real-time mobile inference at 640&times;640 resolution.</p>
       <div class="project-tags">
         <span class="tag">YOLOv8</span>
         <span class="tag">ONNX Runtime</span>
@@ -539,17 +545,12 @@
 
     <div class="project">
       <div class="project-header">
-        <h3>Automated Floor Plan Processing & Indoor Map Generation</h3>
-        <span class="project-meta">2025 &ndash; Present</span>
+        <h3>Automated Floor Plan Processing &amp; Indoor Map Generation</h3>
+        <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-desc">
-        Python toolkit for automatically extracting indoor navigation map data from CAD drawings (DXF).
-        Includes automatic stair detection, YOLO-based floor plan object detection,
-        and drawing merge/layer optimization pipelines.
-      </p>
-      <div class="project-stats">
-        4 buildings processed (Hansando, Daewoo, Suwon Station, Anam Hospital)
-      </div>
+      <p class="project-par"><strong>Problem:</strong> Converting architectural CAD drawings into machine-readable indoor map data is a tedious manual process that doesn't scale across buildings.</p>
+      <p class="project-par"><strong>Approach:</strong> Built a Python pipeline that parses DXF files, detects stair regions via geometric analysis, and uses YOLOv8 to locate elevators, exits, and other POIs from rasterized floor plan images.</p>
+      <p class="project-par"><strong>Result:</strong> Automated map extraction for 4 buildings (Hansando, Daewoo, Suwon Station, Anam Hospital), eliminating manual annotation and enabling rapid indoor map updates.</p>
       <div class="project-tags">
         <span class="tag">Python</span>
         <span class="tag">ezdxf</span>
@@ -569,10 +570,9 @@
         <h3>Virtual Reality Using Various Sensors in Unity</h3>
         <span class="project-meta">Jul &ndash; Nov 2024</span>
       </div>
-      <p class="project-desc">
-        Implemented VR shooting triggered by arm muscle exertion (EMG sensors) and object movement
-        based on balance board inclination (IMU sensors). Built the environment in Unity.
-      </p>
+      <p class="project-par"><strong>Problem:</strong> Standard VR controllers lack intuitive physical interaction; muscle effort and body balance are not captured.</p>
+      <p class="project-par"><strong>Approach:</strong> Integrated EMG sensors for shooting triggers and IMU-equipped balance boards for object movement in a Unity VR environment.</p>
+      <p class="project-par"><strong>Result:</strong> Demonstrated a working VR prototype where physical exertion and balance directly control the game.</p>
       <div class="project-tags">
         <span class="tag">Unity</span>
         <span class="tag">EMG</span>
@@ -586,11 +586,9 @@
         <h3>Creating Realistic AR Content Using Trackers</h3>
         <span class="project-meta">Jul &ndash; Nov 2024</span>
       </div>
-      <p class="project-desc">
-        Manufactured and tested 10 hardware trackers. Developed AR blending with Korea University's
-        "Hoi" character. Produced video content uploaded to
-        <a href="https://instagram.com/hoiverse.io" target="_blank">Instagram: hoiverse.io</a>.
-      </p>
+      <p class="project-par"><strong>Problem:</strong> Producing believable AR content requires precise real-world tracking, which commercial solutions don't always provide affordably.</p>
+      <p class="project-par"><strong>Approach:</strong> Manufactured 10 custom hardware trackers and developed an AR blending pipeline with Korea University's "Hoi" character.</p>
+      <p class="project-par"><strong>Result:</strong> Published AR video content on <a href="https://instagram.com/hoiverse.io" target="_blank">Instagram: hoiverse.io</a>.</p>
       <div class="project-tags">
         <span class="tag">AR</span>
         <span class="tag">Hardware</span>
@@ -603,10 +601,9 @@
         <h3>PID Motor Control</h3>
         <span class="project-meta">May &ndash; Jun 2024</span>
       </div>
-      <p class="project-desc">
-        Controlled DD motor with sinusoidal waveform inputs. Created and validated a transfer function
-        through experiments, then implemented PD and PID controls.
-      </p>
+      <p class="project-par"><strong>Problem:</strong> Controlling a DD motor to follow sinusoidal references requires precise tuning and accurate system modeling.</p>
+      <p class="project-par"><strong>Approach:</strong> Derived a transfer function from experimental frequency responses, then designed and implemented PD and PID controllers.</p>
+      <p class="project-par"><strong>Result:</strong> Validated controller performance with sinusoidal tracking and step response experiments in Matlab.</p>
       <div class="project-tags">
         <span class="tag">Matlab</span>
         <span class="tag">PID Control</span>
@@ -619,10 +616,9 @@
         <h3>Gait Analysis with Matlab</h3>
         <span class="project-meta">Mar &ndash; Jun 2024</span>
       </div>
-      <p class="project-desc">
-        Biomedical engineering term project. Collected human gait data using infrared trackers
-        and analyzed gait patterns with Matlab.
-      </p>
+      <p class="project-par"><strong>Problem:</strong> Understanding human gait biomechanics requires accurate motion capture and quantitative analysis.</p>
+      <p class="project-par"><strong>Approach:</strong> Collected gait data using infrared trackers and processed joint angles and gait cycles in Matlab.</p>
+      <p class="project-par"><strong>Result:</strong> Produced a biomedical engineering analysis report with gait pattern classification.</p>
       <div class="project-tags">
         <span class="tag">Matlab</span>
         <span class="tag">Biomedical</span>
@@ -632,55 +628,22 @@
 
     <div class="project">
       <div class="project-header">
-        <h3>Tracker System Development</h3>
-        <span class="project-meta">Sep 2023</span>
-      </div>
-      <p class="project-desc">
-        Developed a system to calculate and filter pitch/yaw angles from sensor data.
-        Created a PWM signal generation circuit to control a 2-axis servo motor.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Embedded</span>
-        <span class="tag">PWM</span>
-        <span class="tag">Servo Motor</span>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>Magnus Effect Analysis Using MADYMO</h3>
-        <span class="project-meta">Oct &ndash; Nov 2023</span>
-      </div>
-      <p class="project-desc">
-        Simulated dynamics of a spinning sphere using MADYMO software.
-        Generated detailed reports and visualizations of airflow patterns and force vectors.
-      </p>
-      <div class="project-tags">
-        <span class="tag">MADYMO</span>
-        <span class="tag">Fluid Dynamics</span>
-        <span class="tag">Simulation</span>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
         <h3>Other Projects</h3>
         <span class="project-meta">2023 &ndash; 2024</span>
       </div>
-      <p class="project-desc" style="margin-bottom:0;">
-      </p>
-      <ul style="font-size:14px; color:#444; margin-top:4px;">
-        <li>Autonomous Parking Robot &mdash; Gear Design and Analysis (2024)</li>
+      <ul style="font-size:14px; color:#444; margin-top:4px; margin-bottom:0;">
+        <li>Tracker System Development &mdash; pitch/yaw calculation, PWM servo control (Sep 2023)</li>
+        <li>Magnus Effect Analysis Using MADYMO &mdash; spinning sphere simulation (Oct&ndash;Nov 2023)</li>
+        <li>Autonomous Parking Robot &mdash; gear design and analysis (2024)</li>
         <li>Maze Escape Micro-mouse (2023)</li>
-        <li>Smart City Public Big Data Analysis (Atmospheric) Using Deep Learning (2023)</li>
       </ul>
     </div>
 
     <!-- Awards -->
-    <h2 id="awards">Scholarships &amp; Awards</h2>
+    <h2 id="awards">Awards</h2>
     <ul class="awards-list">
       <li>
-        <span class="award-name"><strong>Silver Award</strong>, Chungcheong ICS IS AI-based Public Big Data Analysis Competition for Smart City Services</span>
+        <span class="award-name"><strong>Silver Award</strong>, AI-based Public Big Data Analysis Competition for Smart City Services (Chungcheong ICS)</span>
         <span class="award-year">2023</span>
       </li>
       <li>
@@ -691,23 +654,6 @@
         <span class="award-name">PBL Corporate Innovation Scholarship</span>
         <span class="award-year">2024</span>
       </li>
-      <li>
-        <span class="award-name">Department Specialization Scholarship (Mentor-Mentee Program)</span>
-        <span class="award-year">2023, 2024</span>
-      </li>
-      <li>
-        <span class="award-name">Volunteer Scholarship (Department President)</span>
-        <span class="award-year">2023, 2024</span>
-      </li>
-    </ul>
-
-    <!-- Activities -->
-    <h2>Activities</h2>
-    <ul class="activities-list">
-      <li><span class="role">Department President</span>, Dept. of Electronics &amp; Mechanical Convergence Eng. <span class="period">(2023 &ndash; 2024, 2-year term)</span></li>
-      <li><span class="role">Member</span>, Unity Virtual Reality Association <span class="period">(2024 &ndash; Present)</span></li>
-      <li><span class="role">Treasurer</span>, Dept. of Electronics &amp; Mechanical Convergence Eng. <span class="period">(2022)</span></li>
-      <li><span class="role">Vice President</span>, Central Guitar Club "Aram Sorae" <span class="period">(2022)</span></li>
     </ul>
 
     <!-- Skills -->
