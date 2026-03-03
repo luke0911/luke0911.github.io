@@ -463,9 +463,9 @@
         <span class="project-meta">Jun 2024 &ndash; Present</span>
       </div>
       <p class="project-par" style="font-size:12px; color:var(--accent); margin-bottom:6px; font-weight:500;">Government-funded &middot; ADD Future Challenge Project (국방부 미래도전과제)</p>
-      <p class="project-par"><strong>Problem:</strong> Naval vessels are steel-hull GPS-denied environments where real-time crew tracking is critical for operational awareness and counter-terrorism response.</p>
-      <p class="project-par"><strong>Approach:</strong> Collected geomagnetic field data across multi-deck naval vessels and trained an LSTM model to construct magnetic fingerprint maps. Built a crew positioning system that matches real-time magnetometer readings against the learned map for location estimation. Integrated the positioning output into a real-time digital twin service and AR glasses interface for tactical operation support. Managed end-to-end project execution including on-site data collection, model training, system integration, and deliverable coordination.</p>
-      <p class="project-par"><strong>Result:</strong> Delivered a working geomagnetic indoor positioning system for the Hansando-class vessel with LSTM-based magnetic map, real-time digital twin crew tracking, and AR-based situational awareness interface.</p>
+      <p class="project-par"><strong>Problem:</strong> GPS-denied steel-hull naval vessels require real-time crew tracking for operational awareness and counter-terrorism response.</p>
+      <p class="project-par"><strong>Approach:</strong> Collected geomagnetic data on multi-deck vessels, trained LSTM to build magnetic fingerprint maps, and matched real-time magnetometer readings for crew positioning. Integrated with digital twin service and AR glasses interface.</p>
+      <p class="project-par"><strong>Result:</strong> Delivered geomagnetic positioning system for Hansando-class vessel with LSTM-based magnetic map, real-time digital twin tracking, and AR situational awareness.</p>
       <div class="project-tags">
         <span class="tag">Geomagnetic Fingerprinting</span>
         <span class="tag">LSTM</span>
@@ -482,9 +482,9 @@
         <span class="project-meta">Sep &ndash; Nov 2025</span>
       </div>
       <p class="project-par" style="font-size:12px; color:var(--accent); margin-bottom:6px; font-weight:500;">Industry-funded &middot; 스마트건설 얼라이언스 &middot; 대우건설</p>
-      <p class="project-par"><strong>Problem:</strong> Newly constructed apartment buildings lack indoor positioning infrastructure; residents and facility managers need reliable in-building navigation and location services.</p>
-      <p class="project-par"><strong>Approach:</strong> Deployed PDR-based indoor positioning and navigation in Daewoo E&amp;C apartment buildings. Collected sensor data on-site, calibrated positioning algorithms for multi-floor residential environments, and integrated the system with the lab's ZeroMap indoor navigation platform. Managed project execution, on-site testing, and deliverable coordination over a 3-month period.</p>
-      <p class="project-par"><strong>Result:</strong> Delivered a validated indoor positioning system for Daewoo apartment buildings within the 3-month project timeline, contributing multi-floor residential map data to the lab's navigation platform.</p>
+      <p class="project-par"><strong>Problem:</strong> Newly constructed apartments lack indoor positioning infrastructure for in-building navigation.</p>
+      <p class="project-par"><strong>Approach:</strong> Deployed PDR-based positioning in Daewoo E&amp;C apartments with on-site data collection, multi-floor algorithm calibration, and ZeroMap platform integration.</p>
+      <p class="project-par"><strong>Result:</strong> Delivered validated indoor positioning system within the 3-month timeline, contributing residential map data to the navigation platform.</p>
       <div class="project-tags">
         <span class="tag">Indoor Positioning</span>
         <span class="tag">PDR</span>
@@ -499,9 +499,9 @@
         <h3>Indoor Pedestrian Dead Reckoning (PDR) System</h3>
         <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> GPS-denied indoor environments lack reliable pedestrian tracking; existing PDR methods suffer from drift and fail to adapt to diverse phone-holding modes.</p>
-      <p class="project-par"><strong>Approach:</strong> Designed an adaptive 3-mode step detection engine (OnHand/InPocket/HandSwing) using a peak-valley-zero-crossing state machine, quaternion-based coordinate transforms, and a C++17 native library bridged via JNI. Compared 5 stride estimation formulas and 7 step detection methods on 700+ sensor datasets from 8 participants.</p>
-      <p class="project-par"><strong>Result:</strong> Built 2 Android apps, 42 Python analysis tools, and a C++ engine (7,400+ LOC). Best step detection achieved 97% recall with 1% false positive; best stride formula (Tian) reached 3&ndash;6% error.</p>
+      <p class="project-par"><strong>Problem:</strong> Existing PDR methods suffer from drift and fail to adapt to diverse phone-holding modes in GPS-denied indoor environments.</p>
+      <p class="project-par"><strong>Approach:</strong> Built adaptive 3-mode step detection (OnHand/InPocket/HandSwing) with peak-valley-zero-crossing state machine, quaternion transforms, and C++17/JNI engine. Compared 5 stride formulas and 7 step detection methods on 700+ datasets.</p>
+      <p class="project-par"><strong>Result:</strong> 2 Android apps, 42 Python tools, C++ engine (7,400+ LOC). Best detection: 97% recall / 1% FP; best stride error: 3&ndash;6%.</p>
       <div class="project-tags">
         <span class="tag">Kotlin</span>
         <span class="tag">C++17</span>
@@ -520,9 +520,9 @@
         <h3>Deep RL-based PDR Step Length Personalization</h3>
         <span class="project-meta">2025 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Fixed stride estimation models introduce systematic drift for different users because gait characteristics vary significantly across individuals.</p>
-      <p class="project-par"><strong>Approach:</strong> Proposed learning a per-user scaling factor (Alpha) instead of directly estimating stride. Designed a custom Gymnasium environment with 38-dim state space (22 IMU features + 16 statistics), 41 discrete actions, and a composite reward (goal-reaching + collision avoidance + distance matching). Trained DQN/PPO agents over 500K+ timesteps with Zeromap indoor collision detection.</p>
-      <p class="project-par"><strong>Result:</strong> Demonstrated automatic per-user gait adaptation with 22-floor map validation. The personalization approach reduced position drift compared to fixed-parameter baselines.</p>
+      <p class="project-par"><strong>Problem:</strong> Fixed stride models cause systematic drift because gait characteristics vary across individuals.</p>
+      <p class="project-par"><strong>Approach:</strong> Learned per-user scaling factor (Alpha) via DQN/PPO with a 38-dim Gymnasium environment (22 IMU + 16 stat features), 41 actions, and composite reward. Trained 500K+ timesteps with Zeromap collision detection.</p>
+      <p class="project-par"><strong>Result:</strong> Reduced position drift vs. fixed-parameter baselines, validated on 22-floor indoor maps.</p>
       <div class="project-tags">
         <span class="tag">DQN</span>
         <span class="tag">PPO</span>
@@ -537,9 +537,9 @@
         <h3>Multi-Building Indoor Navigation Platform</h3>
         <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Each indoor venue requires its own navigation solution; there was no unified system to handle multi-building, multi-floor indoor routing with real-time floor detection.</p>
-      <p class="project-par"><strong>Approach:</strong> Built ZeroMap navigation apps combining compass heading with PDR, a JSON-based indoor map schema, barometer-based floor change detection (Weighted Scoring FSM), and a C++ simulation framework (38K LOC) with OpenCV visualization for algorithm comparison.</p>
-      <p class="project-par"><strong>Result:</strong> Deployed navigation across 4 buildings (KU campus, Daewoo apartment, Suwon station, naval vessel). Delivered 3 C++ simulators and dual Express.js / Spring Boot backends.</p>
+      <p class="project-par"><strong>Problem:</strong> No unified system for multi-building, multi-floor indoor routing with real-time floor detection.</p>
+      <p class="project-par"><strong>Approach:</strong> Built ZeroMap apps (compass + PDR), barometer-based floor detection (Weighted Scoring FSM), and C++ simulation framework (38K LOC) with OpenCV visualization.</p>
+      <p class="project-par"><strong>Result:</strong> Deployed across 4 buildings (KU campus, Daewoo apartment, Suwon station, naval vessel) with 3 simulators and Express.js / Spring Boot backends.</p>
       <div class="project-tags">
         <span class="tag">Android</span>
         <span class="tag">C++17</span>
@@ -559,9 +559,9 @@
         <h3>Real-time Indoor Object Detection &amp; OCR</h3>
         <span class="project-meta">2025 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Indoor navigation systems lack visual context; users cannot automatically identify stairs, exits, or elevators from camera feed for seamless wayfinding.</p>
-      <p class="project-par"><strong>Approach:</strong> Trained a YOLOv8n model (3.2M params) on 8 indoor object classes and deployed it on Android via ONNX Runtime with Camera2 real-time inference. Integrated OCR for sign text extraction.</p>
-      <p class="project-par"><strong>Result:</strong> Achieved 90%+ precision on key classes (stair mAP50: 84.5%, exit sign: 99.5%) with real-time mobile inference at 640&times;640 resolution.</p>
+      <p class="project-par"><strong>Problem:</strong> Indoor navigation lacks visual context&mdash;users cannot automatically identify stairs, exits, or elevators from camera feed.</p>
+      <p class="project-par"><strong>Approach:</strong> Trained YOLOv8n (3.2M params, 8 classes) and deployed on Android via ONNX Runtime + Camera2. Integrated OCR for sign text extraction.</p>
+      <p class="project-par"><strong>Result:</strong> 90%+ precision (stair mAP50: 84.5%, exit sign: 99.5%) with real-time mobile inference at 640&times;640.</p>
       <div class="project-tags">
         <span class="tag">YOLOv8</span>
         <span class="tag">ONNX Runtime</span>
@@ -578,9 +578,9 @@
         <h3>Automated Floor Plan Processing &amp; Indoor Map Generation</h3>
         <span class="project-meta">2024 &ndash; Present</span>
       </div>
-      <p class="project-par"><strong>Problem:</strong> Converting architectural CAD drawings into machine-readable indoor map data is a tedious manual process that doesn't scale across buildings.</p>
-      <p class="project-par"><strong>Approach:</strong> Built a Python pipeline that parses DXF files, detects stair regions via geometric analysis, and uses YOLOv8 to locate elevators, exits, and other POIs from rasterized floor plan images.</p>
-      <p class="project-par"><strong>Result:</strong> Automated map extraction for 4 buildings (Hansando, Daewoo, Suwon Station, Anam Hospital), eliminating manual annotation and enabling rapid indoor map updates.</p>
+      <p class="project-par"><strong>Problem:</strong> Converting CAD drawings (DXF) into indoor map data is manual and doesn't scale across buildings.</p>
+      <p class="project-par"><strong>Approach:</strong> Python pipeline parsing DXF files with geometric stair detection and YOLOv8-based POI extraction from rasterized floor plans.</p>
+      <p class="project-par"><strong>Result:</strong> Automated map extraction for 4 buildings (Hansando, Daewoo, Suwon Station, Anam Hospital), eliminating manual annotation.</p>
       <div class="project-tags">
         <span class="tag">Python</span>
         <span class="tag">ezdxf</span>
