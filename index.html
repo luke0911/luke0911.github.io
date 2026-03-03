@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do-Hun Lee | Korea University</title>
+  <meta name="description" content="Do-Hun Lee - Indoor Positioning & Pedestrian Navigation Research, Korea University">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #494e52;
+      --accent: #52adc8;
+      --link: #1a0dab;
+      --text: #222;
+      --text-light: #6c757d;
+      --bg: #fff;
+      --sidebar-bg: #f5f5f5;
+      --border: #e0e0e0;
+      --tag-bg: #e8f4f8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', 'Noto Sans KR', -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--primary);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a.site-title {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    nav .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: #fff; }
+
+    /* Layout */
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      min-height: calc(100vh - 52px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      min-width: 260px;
+      padding: 32px 20px;
+      border-right: 1px solid var(--border);
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 16px;
+      border: 3px solid var(--border);
+      background: #ddd;
+    }
+    .profile-name {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+    .profile-name-en {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .profile-affiliation {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .profile-links {
+      list-style: none;
+      font-size: 13px;
+    }
+    .profile-links li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .profile-links li:last-child { border-bottom: none; }
+    .profile-links a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .profile-links a:hover { color: var(--accent); }
+    .profile-links .icon {
+      width: 16px;
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 36px 40px;
+      max-width: 860px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 36px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+    h2:first-child { margin-top: 0; }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 24px 0 8px;
+    }
+
+    p { margin-bottom: 12px; }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 4px; }
+
+    /* Research Interests */
+    .interests {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .interests li {
+      background: var(--tag-bg);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #2a7f9e;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    /* Project Cards */
+    .project {
+      margin-bottom: 28px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: box-shadow 0.2s;
+    }
+    .project:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .project h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+    .project-meta {
+      font-size: 12px;
+      color: var(--text-light);
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+    .project-desc {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      background: #f0f0f0;
+      color: #555;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+    .project-stats {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+    .project-links {
+      margin-top: 10px;
+    }
+    .project-links a {
+      font-size: 13px;
+      margin-right: 16px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Skills Table */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .skill-card {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .skill-card h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .skill-card p {
+      font-size: 13px;
+      margin: 0;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .edu-item:last-child { border-bottom: none; }
+    .edu-year {
+      font-size: 13px;
+      color: var(--text-light);
+      min-width: 100px;
+      font-weight: 500;
+    }
+    .edu-detail h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .edu-detail p {
+      font-size: 13px;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-wrapper { flex-direction: column; }
+      .sidebar {
+        width: 100%;
+        min-width: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 24px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+      }
+      .profile-img { width: 100px; height: 100px; margin: 0; }
+      .sidebar > div { text-align: left; }
+      .profile-name, .profile-name-en, .profile-affiliation { text-align: left; }
+      .main-content { padding: 24px 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="site-title">Do-Hun Lee</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="https://github.com/luke0911" target="_blank">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div>
+      <!-- 프로필 사진: images/profile.jpg로 교체 -->
+      <img src="images/profile.jpg" alt="Do-Hun Lee" class="profile-img"
+           onerror="this.style.background='linear-gradient(135deg,#52adc8,#494e52)';this.style.border='none';">
+      <div class="profile-name">이도훈</div>
+      <div class="profile-name-en">Do-Hun Lee</div>
+      <div class="profile-affiliation">
+        Graduate Student<br>
+        Korea University
+      </div>
+      <ul class="profile-links">
+        <li><span class="icon">&#x1F4CD;</span> Seoul, Korea</li>
+        <li><span class="icon">&#x2709;</span> <a href="mailto:your-email@korea.ac.kr">your-email@korea.ac.kr</a></li>
+        <li><span class="icon">&#x1F4BB;</span> <a href="https://github.com/luke0911" target="_blank">github.com/luke0911</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <h2 id="about">About Me</h2>
+    <p>
+      고려대학교 대학원에서 <strong>실내 측위 및 보행자 항법</strong>을 연구하고 있습니다.
+      스마트폰 IMU 센서만으로 GPS 없이 실내 위치를 추정하는 PDR(Pedestrian Dead Reckoning)
+      시스템을 개발하고 있으며, 강화학습을 활용한 보행 모델 개인화, 컴퓨터 비전 기반 실내
+      객체 인식 등으로 연구 범위를 확장하고 있습니다.
+    </p>
+    <p>
+      Android/Kotlin, C++, Python 전 스택에 걸쳐 센서 신호처리부터 딥러닝 모델 학습, 모바일 앱
+      배포까지 end-to-end 시스템을 직접 설계하고 구현합니다.
+    </p>
+
+    <h2>Research Interests</h2>
+    <ul class="interests">
+      <li>Pedestrian Dead Reckoning (PDR)</li>
+      <li>IMU Sensor Fusion</li>
+      <li>Deep Reinforcement Learning</li>
+      <li>Indoor Map Matching</li>
+      <li>Object Detection (YOLO)</li>
+      <li>Signal Processing</li>
+      <li>Mobile Computing</li>
+    </ul>
+
+    <h2 id="projects">Research Projects</h2>
+
+    <!-- Project 1 -->
+    <div class="project">
+      <div class="project-header">
+        <h3>실내 보행자 위치 추적(PDR) 시스템</h3>
+        <span class="project-meta">2024 &ndash; Present</span>
+      </div>
+      <p class="project-desc">
+        스마트폰 IMU 센서 기반 보행 감지, 보폭 추정, 방향 추적을 수행하는 종합 PDR 연구 플랫폼.
+        3가지 보유 모드(OnHand/InPocket/HandSwing)별 적응형 알고리즘과 C++17 네이티브 엔진을 구현하고,
+        5가지 보폭 공식, 7가지 스텝 감지 방법을 비교 분석했습니다.
+      </p>
+      <div class="project-stats">
+        Android 앱 2종 &middot; Python 분석도구 42개 &middot; C++ 7,400+ LOC &middot; 센서 데이터셋 700+
+      </div>
+      <div class="project-tags">
+        <span class="tag">Kotlin</span>
+        <span class="tag">C++17</span>
+        <span class="tag">Python</span>
+        <span class="tag">NDK/JNI</span>
+        <span class="tag">FFT</span>
+        <span class="tag">Quaternion</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/luke0911/indoorPDR">[Private Repo]</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project">
+      <div class="project-header">
+        <h3>강화학습 기반 PDR 보폭 개인화</h3>
+        <span class="project-meta">2025 &ndash; Present</span>
+      </div>
+      <p class="project-desc">
+        DQN/PPO를 활용하여 사용자별 최적 보폭 스케일 팩터(Alpha)를 자동 학습하는 시스템.
+        22차원 IMU 특징을 추출하고, 41개 이산 액션 중 최적 Alpha를 선택하는
+        커스텀 Gymnasium 환경을 설계했습니다. Zeromap 실내 지도 기반 충돌 감지로 보상을 구성합니다.
+      </p>
+      <div class="project-stats">
+        38차원 상태공간 &middot; 500K+ 학습 타임스텝 &middot; 22개 층 맵 데이터
+      </div>
+      <div class="project-tags">
+        <span class="tag">DQN</span>
+        <span class="tag">PPO</span>
+        <span class="tag">stable-baselines3</span>
+        <span class="tag">Gymnasium</span>
+        <span class="tag">pybind11</span>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project">
+      <div class="project-header">
+        <h3>다중 건물 실내 네비게이션 플랫폼</h3>
+        <span class="project-meta">2024 &ndash; Present</span>
+      </div>
+      <p class="project-desc">
+        고려대 캠퍼스, 대우건설 아파트, 안암병원, 수원역 등 다중 건물을 지원하는 실내 네비게이션 시스템.
+        ZeroMap 앱, C++ 시뮬레이션 프레임워크(38K LOC), Express/Spring Boot 백엔드를 포함합니다.
+        IMU 기반 층 감지(Weighted Scoring FSM)와 듀얼 파이프라인 PDR 비교 시뮬레이터를 개발했습니다.
+      </p>
+      <div class="project-stats">
+        4개 건물 &middot; C++ 38,000+ LOC &middot; 시뮬레이터 3종
+      </div>
+      <div class="project-tags">
+        <span class="tag">Android</span>
+        <span class="tag">C++17</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">Express.js</span>
+        <span class="tag">Spring Boot</span>
+        <span class="tag">Unity 3D</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/luke0911/KU-LAB">[KU-LAB]</a>
+        <a href="https://github.com/luke0911/Indoor-Navigation-Sim">[Indoor-Navigation-Sim]</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project">
+      <div class="project-header">
+        <h3>YOLO 기반 실시간 실내 객체 탐지</h3>
+        <span class="project-meta">2025 &ndash; Present</span>
+      </div>
+      <p class="project-desc">
+        실내 환경의 계단, 엘리베이터, 표지판 등을 실시간 카메라로 인식하는 Android 앱.
+        YOLOv8 모델을 학습하여 8클래스 탐지를 수행하며, ONNX Runtime 기반 모바일 추론과
+        OCR 텍스트 인식을 통합했습니다.
+      </p>
+      <div class="project-stats">
+        계단 감지 mAP50: 84.5% &middot; 출구 표지판: 99.5% &middot; 모바일 실시간 추론
+      </div>
+      <div class="project-tags">
+        <span class="tag">YOLOv8</span>
+        <span class="tag">ONNX Runtime</span>
+        <span class="tag">Kotlin</span>
+        <span class="tag">Camera2 API</span>
+        <span class="tag">OCR</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/luke0911/CNN">[GitHub]</a>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project">
+      <div class="project-header">
+        <h3>건축 도면 자동 처리 및 실내 지도 생성</h3>
+        <span class="project-meta">2024 &ndash; Present</span>
+      </div>
+      <p class="project-desc">
+        CAD 도면(DXF)에서 실내 네비게이션용 지도 데이터를 자동 추출하는 Python 도구 모음.
+        계단 자동 감지, YOLO 기반 도면 객체 탐지, 도면 병합 및 레이어 최적화 파이프라인을 구축했습니다.
+      </p>
+      <div class="project-stats">
+        4개 건물 도면 처리 (한산도함, 대우건설, 수원역, 안암병원)
+      </div>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">ezdxf</span>
+        <span class="tag">YOLOv8</span>
+        <span class="tag">Shapely</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/luke0911/Mapmerge">[GitHub]</a>
+      </div>
+    </div>
+
+    <h2 id="skills">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Languages</h4>
+        <p>Python, Kotlin, C++17, Java, JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <h4>Mobile</h4>
+        <p>Android SDK, Jetpack Compose, Camera2, ONNX Runtime, NDK/JNI</p>
+      </div>
+      <div class="skill-card">
+        <h4>ML / DL</h4>
+        <p>YOLOv8, stable-baselines3 (DQN/PPO), Gymnasium, TensorFlow</p>
+      </div>
+      <div class="skill-card">
+        <h4>Signal Processing</h4>
+        <p>FFT, Butterworth Filter, ZUPT, Quaternion Transform, Sensor Fusion</p>
+      </div>
+      <div class="skill-card">
+        <h4>Visualization</h4>
+        <p>OpenCV, Matplotlib, PySide6, PyQtGraph</p>
+      </div>
+      <div class="skill-card">
+        <h4>Backend / Build</h4>
+        <p>Express.js, Spring Boot, CMake, Gradle (KTS), pybind11</p>
+      </div>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu-item">
+      <span class="edu-year">2024 &ndash; Present</span>
+      <div class="edu-detail">
+        <h4>고려대학교 대학원</h4>
+        <p>석사과정 (재학)</p>
+      </div>
+    </div>
+    <div class="edu-item">
+      <span class="edu-year">&ndash; 2024</span>
+      <div class="edu-detail">
+        <h4>고려대학교</h4>
+        <p>학사</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  &copy; 2026 Do-Hun Lee. Built with GitHub Pages.
+</footer>
+
+</body>
+</html>
