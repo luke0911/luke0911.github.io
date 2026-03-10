@@ -491,7 +491,7 @@
       </div>
       <p class="project-par"><strong>Problem:</strong> Indoor positioning without GPS drifts over time, and results change depending on how the user holds the phone.</p>
       <p class="project-par"><strong>Approach:</strong> Built step detection for 3 phone modes (hand/pocket/swing) using a state machine and quaternion transforms in C++17/JNI. Tested 5 stride formulas and 7 detection methods on 700+ datasets.</p>
-      <p class="project-par"><strong>Result:</strong> 2 Android apps, 42 Python analysis tools, and a C++ engine (7,400+ LOC).</p>
+      <p class="project-par"><strong>Result:</strong> Pattern-based step detection reached 97% accuracy with 1% false positive rate. Compared 5 stride formulas on 700+ datasets from 8 participants across 3 walking speeds.</p>
       <div class="project-tags">
         <span class="tag">Kotlin</span>
         <span class="tag">C++17</span>
@@ -551,7 +551,7 @@
       </div>
       <p class="project-par"><strong>Problem:</strong> PDR-only navigation requires a known starting position, but there is no way to determine the initial location indoors without manual input.</p>
       <p class="project-par"><strong>Approach:</strong> Trained YOLOv8n (8 classes) to detect indoor signs and objects on Android (ONNX Runtime + Camera2), then used OCR to read sign text and match it against POI data already stored in the indoor map to estimate the user's initial position.</p>
-      <p class="project-par"><strong>Result:</strong> Stair detection mAP50 84.5%, exit sign 99.5%, running in real time on mobile.</p>
+      <p class="project-par"><strong>Result:</strong> 8-class detection model achieved mAP50 80.8% (Precision 87.3%), running in real time on mobile.</p>
       <div class="project-tags">
         <span class="tag">YOLOv8</span>
         <span class="tag">ONNX Runtime</span>
