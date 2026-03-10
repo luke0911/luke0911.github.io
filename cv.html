@@ -350,7 +350,7 @@
     <span class="project-meta">2025 &ndash; Present</span>
   </div>
   <p class="project-par"><strong>Problem:</strong> PDR-only navigation requires a known starting position, but there is no way to determine the initial location indoors without manual input.</p>
-  <p class="project-par"><strong>Approach:</strong> Trained YOLOv8n (8 classes) to detect indoor signs and objects on Android (ONNX Runtime + Camera2), then used OCR to read sign text and match it against POI data already stored in the indoor map to converge on the user's initial position.</p>
+  <p class="project-par"><strong>Approach:</strong> Trained YOLOv8n (8 classes) to detect indoor signs and objects on Android (ONNX Runtime + Camera2), then used OCR to read sign text and match it against POI data already stored in the indoor map to estimate the user's initial position.</p>
   <p class="project-par"><strong>Result:</strong> Stair detection mAP50 84.5%, exit sign 99.5%, running in real time on mobile.</p>
   <div class="project-tags">
     <span class="tag">YOLOv8</span>
@@ -400,7 +400,7 @@
     <h3>Creating Realistic AR Content Using Trackers</h3>
     <span class="project-meta">Jul &ndash; Nov 2024</span>
   </div>
-  <p class="project-par"><strong>Problem:</strong> Making realistic AR content needs accurate tracking, but off-the-shelf solutions are expensive.</p>
+  <p class="project-par"><strong>Problem:</strong> Creating realistic AR content requires accurate tracking, but off-the-shelf solutions are expensive.</p>
   <p class="project-par"><strong>Approach:</strong> Built 10 custom hardware trackers and made an AR blending pipeline with Korea University's "Hoi" character.</p>
   <p class="project-par"><strong>Result:</strong> Published AR video content on Instagram.</p>
   <div class="project-tags">
